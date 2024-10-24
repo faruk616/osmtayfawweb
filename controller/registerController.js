@@ -17,11 +17,11 @@ exports.postRegister = async (req, res) => {
         
         const newUser = new userModel({ username, email, password }); 
         await newUser.save()
-        console.log("User saved" ,  newUser);
+        
         
 
         
-        return res.send("okey")
+        return res.status(201).json({succes:true , newUser});
     } catch (error) {
         console.error("Error saving user:", error);
         let errors = {} ;

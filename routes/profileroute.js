@@ -5,7 +5,7 @@ const authMiddleware = require("../authMiddleware/authMiddleware.js")
 const postController = require("../controller/postController.js");
 
 router.route("/").get(authMiddleware.authenticateToken, profileController.getProfile);
-router.route("/:id").get( profileController.getProfileid)
+router.route("/:id").get(profileController.getProfileid);
 router.route("/").post(postController.createPost);
 
 
